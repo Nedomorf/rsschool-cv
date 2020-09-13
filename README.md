@@ -1,1 +1,1 @@
-# rsschool-cv
+https://Nedomorf.github.io/rsschool-cv/cv
