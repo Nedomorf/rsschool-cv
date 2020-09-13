@@ -26,6 +26,12 @@ a {
     align-items: center;
 }
 
+#photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .code-example {
     background: #bababa;
     color: black;
