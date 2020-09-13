@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio</title>
+</head>
+<body>
+<div id="main">
+    <div id="curriculum-vitae">
+        <h1>CURRICULUM VITAE</h1>
+    </div>
+    <div id="photo">
+        <img src="https://avatars3.githubusercontent.com/u/47911971?s=400&u=789dcf50a2bc4d12d5abe8c820998e2e0b2d2f09&v=4" alt="photo">
+    </div>
+    <div id="name">
+        <h2>Name</h2>
+        <p>Daniil Pasko</p>
+    </div>
+    <div id="contact-info">
+        <h2>Contact Info</h2>
+        <p>
+            <strong>tel:</strong><a href="phoneto:+375296041563"></a> +375296041563<br>
+            <strong>email:</strong> <a href="mailto:danikp01@mail.ru"> danikp01@mail.ru</a><br>
+            <strong>telegram:</strong> <a href="https://t.me/greatly124"> https://t.me/greatly124</a>
+        </p>
+    </div>
+    <div id="summary">
+        <h2>Summary</h2>
+        <p>
+            My goal is to become a professional at the Front-End developing. I wish to increase my knowledge and skills
+            through
+            the instant practice.<br>
+            I have been interested in programming for a long time and since 2018 I have been studying the Front-End
+            hard.<br>
+            I can describe myself as an attentive, plodding and easy-educable person.
+        </p>
+    </div>
+    <div id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>React
+                <ul>
+                    <li>React Hooks</li>
+                </ul>
+            </li>
+            <li>Redux
+                <ul>
+                    <li>Redux Store</li>
+                    <li>Redux - thunk</li>
+                    <li>Redux Form</li>
+                </ul>
+            </li>
+            <li>React - Redux</li>
+            <li>FLUX</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Figma</li>
+        </ul>
+    </div>
+    <div id="code-examples">
+        <h2>Code examples</h2>
+        <div id="react-hooks">
+            <h3>React Hooks</h3>
+            <div class="code-example">
+            <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, {useState} <span
+                    class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+<span class="hljs-keyword">const</span> TextArea = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
+
+    <span class="hljs-keyword">const</span> [newText, setNewText] = useState(<span class="hljs-string">""</span>);
+
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>
+            <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+            <span class="hljs-attr">value</span>=<span class="hljs-string">{newText}</span>
+            <span class="hljs-attr">onChange</span>=<span class="hljs-string">{e</span> =&gt;</span> setNewText(e.target.value)}
+        /&gt;
+    )
+}
+
+export default TextArea;</span>
+</code></pre>
+            </div>
+        </div>
+        <div id="redux-form">
+            <h3>Redux Form</h3>
+            <div class="code-example">
+            <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> style <span
+                    class="hljs-keyword">from</span> <span
+                    class="hljs-string">"./AddPost.module.css"</span>;
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> {Field, reduxForm, reset} <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">"redux-form"</span>;
+<span class="hljs-keyword">import</span> {maxLengthCreator, required} <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">"../../utils/validators/validators"</span>;
+<span class="hljs-keyword">import</span> {Textarea} <span class="hljs-keyword">from</span> <span class="hljs-string">"../Common/FormsFields/FormsFields"</span>;
+
+const maxLength10 = maxLengthCreator(<span class="hljs-number">10</span>);
+
+const PostForm = <span class="hljs-function"><span class="hljs-params">(props)</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> (
+        &lt;form onSubmit={props.handleSubmit} className={style.addPost}&gt;
+            &lt;Field
+                placeholder={<span class="hljs-string">"New post..."</span>}
+                name=<span class="hljs-string">"newPostText"</span>
+                component={Textarea}
+                validate={[required, maxLength10]}
+            /&gt;
+            &lt;button&gt;Отправить&lt;/button&gt;
+        &lt;/form&gt;
+    )
+}
+
+let ReduxPostFrom = reduxForm({
+    <span class="hljs-name">form</span>: <span class="hljs-string">'post'</span>,
+})(PostForm)
+
+const AddPostForm = <span class="hljs-function"><span class="hljs-params">(props)</span> =&gt;</span> {
+    let onSubmit = <span class="hljs-function"><span class="hljs-params">(values, dispatch)</span> =&gt;</span> {
+        props.addPost(values.newPostText);
+        dispatch(reset(<span class="hljs-string">'post'</span>));
+    }
+    <span class="hljs-keyword">return</span> (
+        &lt;ReduxPostFrom onSubmit={onSubmit}/&gt;
+    )
+}
+
+<span class="hljs-keyword">export</span> default AddPostForm;
+</code></pre>
+            </div>
+        </div>
+        <div id="formsfields-js">
+            <h3>FormsFields.js</h3>
+            <div class="code-example">
+        <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span
+                class="hljs-keyword">from</span> <span
+                class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> style <span class="hljs-keyword">from</span> <span class="hljs-string">'./FormsFields.module.css'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Textarea = <span class="hljs-function">(<span
+                    class="hljs-params">{input, meta, ...props}</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> hasError = meta.touched &amp;&amp; meta.error;
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span
+                class="hljs-string">{</span>`${<span class="hljs-attr">style.formField</span>} ${<span
+                class="hljs-attr">hasError</span> ? <span class="hljs-attr">style.error</span> <span
+                class="hljs-attr">:</span> ""}`}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> {<span class="hljs-attr">...input</span>} {<span
+                    class="hljs-attr">...props</span>} /&gt;</span>
+            { hasError &amp;&amp; <span class="hljs-tag">&lt;<span
+                    class="hljs-name">div</span>&gt;</span>{meta.error}<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">div</span>&gt;</span> }
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    )
+}</span>
+</code></pre>
+            </div>
+        </div>
+        <div id="validators-js">
+        <h3>validators.js</h3>
+            <div class="code-example">
+        <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span
+                class="hljs-keyword">const</span> required = <span
+                class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (!value) <span class="hljs-keyword">return</span> <span class="hljs-string">"The field is required."</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> maxLengthCreator = <span
+                    class="hljs-function">(<span class="hljs-params">maxLength</span>) =&gt;</span> value =&gt; {
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value.length &gt; maxLength) <span class="hljs-keyword">return</span> <span
+                    class="hljs-string">`Max length is <span class="hljs-subst">${maxLength}</span> symbols.`</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> minLengthCreator = <span
+                    class="hljs-function">(<span class="hljs-params">minLength</span>) =&gt;</span> value =&gt; {
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value.length &lt; minLength) <span class="hljs-keyword">return</span> <span
+                    class="hljs-string">`Min length is <span class="hljs-subst">${minLength}</span> symbols.`</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+}
+</code></pre>
+            </div>
+        </div>
+    </div>
+    <h2 id="experience">Experience</h2>
+    <p>Experience of developing a social network using the courses of <em>Dmitry Kuzedyubin </em><a href="https://github.com/it-kamasutra">@it-kamasutra</a><br>
+        <a href="https://github.com/Nedomorf/social-web">My social network</a>
+        <br>
+        I was the participant of the Huawei ICT Competition, Huawei Cup, Yandex Cup, Itransition Opener.</p>
+    <h2 id="education">Education</h2>
+    <p>I am a student of the BNTU, the Faculty of Informational Technologies and Robotics now.<br>
+        I passed the courses of Dmitry Kuzedybin, was studying at the Itransition company.</p>
+    <h2 id="english">English</h2>
+    <p>I have an experience in the translating of technical articles.<br>
+        Now I have the pre-intermediate level (A2).</p>
+</div>
+</body>
+</html>
