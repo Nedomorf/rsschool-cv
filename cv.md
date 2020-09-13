@@ -128,6 +128,11 @@ export const minLengthCreator = (minLength) => value => {
 ## Experience
 Experience of developing a social network using the courses of *Dmitry Kuzedyubin* @it-kamasutra<br>
 [My social network](https://github.com/Nedomorf/social-web)
-
-
-
+<br>
+I was the participant of the Huawei ICT Competition, Huawei Cup, Yandex Cup, Itransition Opener.
+## Education
+I am a student of the BNTU, the Faculty of Informational Technologies and Robotics now.<br>
+I passed the courses of Dmitry Kuzedybin, was studying at the Itransition company.
+## English
+I have an experience in the translating of technical articles.<br>
+Now I have the pre-intermediate level (A2).
