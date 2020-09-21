@@ -135,4 +135,4 @@ I am a student of the BNTU, the Faculty of Informational Technologies and Roboti
 I passed the courses of Dmitry Kuzedybin, was studying at the Itransition company.
 ## English
 I have an experience in the translating of technical articles.<br>
-Now I have the pre-intermediate level (A2).
+Now I have the intermediate level (B1).
