@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #bababa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: black;
+}
+
+#main {
+    max-width: 1024px;
+    color: black;
+    background: white;
+    padding: 10px;
+    border: 4px double black;
+}
+
+#curriculum-vitae {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-example {
+    background: #bababa;
+    color: black;
+    padding: 5px;
+}
