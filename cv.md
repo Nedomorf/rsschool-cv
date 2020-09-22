@@ -129,6 +129,11 @@ export const minLengthCreator = (minLength) => value => {
 Experience of developing a social network using the courses of *Dmitry Kuzedyubin* @it-kamasutra<br>
 [My social network](https://github.com/Nedomorf/social-web)
 <br>
+login: free@samuraijs.com
+<br>
+password: free
+<br>
+<br>
 I was the participant of the Huawei ICT Competition, Huawei Cup, Yandex Cup, Itransition Opener.
 ## Education
 I am a student of the BNTU, the Faculty of Informational Technologies and Robotics now.<br>
